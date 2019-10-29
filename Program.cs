@@ -704,7 +704,6 @@ namespace _2doParcialEscanioDisla
             List<Customers> CustomerList = new List<Customers>();
             NorthwindDBEntities db = new NorthwindDBEntities();
 
-
             ConsoleTable TablaCust = new ConsoleTable("Código", "Nombre");
             foreach (Customers List in cud.Listado<Customers>())
             {
@@ -798,13 +797,20 @@ namespace _2doParcialEscanioDisla
                 TablaDetallesPedidos.AddRow(ORDET.OrderID, ORDET.Products.ProductName, ORDET.UnitPrice, ORDET.Quantity, ORDET.Discount);
             }
             TablaDetallesPedidos.Write(Format.Alternative);
-
             Console.Write("\n Ingrese el código de la factura que desea exportar: ");
+
             while (!int.TryParse(Console.ReadLine(), out IDFact))
             {
                 Console.Write("\n Sólo se permiten números. Intente nuevamente: ");
             }
+            Console.WriteLine("\n Estamos procesando su búsqueda.................\n");
+            while (!odetdat.Listado<Order_Details>().Exists(odt => odt.OrderID == IDFact))
+            {
+                Console.Write("\n Este código no pertenece a ningua factura registrada. Intente nuevamente: ");
+                IDFact = int.Parse(Console.ReadLine());
+            }
             var resultFact = odetdat.Listado<Order_Details>().Find(odt => odt.OrderID == IDFact);
+
             if (resultFact != null && odetdat.Listado<Order_Details>().Exists(ordt => ordt.OrderID == IDFact))
             {
                 odetdat.TotalProductos = 0;
