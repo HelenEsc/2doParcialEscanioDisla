@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="_2doParcialEscanioDisla.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ArchivoTxt" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\helen\OneDrive\Documentos\9no Cuatrimestre\Lenguaje de 4ta\Factura.txt</Value>
+    </Setting>
+    <Setting Name="RutaCSV" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\helen\OneDrive\Documentos\9no Cuatrimestre\Lenguaje de 4ta\Clientes.csv</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

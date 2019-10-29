@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2doParcialEscanioDisla", "2doParcialEscanioDisla.csproj", "{8C482EBF-A6D6-45EF-97BF-6A91495A1489}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C482EBF-A6D6-45EF-97BF-6A91495A1489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C482EBF-A6D6-45EF-97BF-6A91495A1489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C482EBF-A6D6-45EF-97BF-6A91495A1489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C482EBF-A6D6-45EF-97BF-6A91495A1489}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFED0FF3-9F9C-41C1-BA7D-668088B32D1A}
+	EndGlobalSection
+EndGlobal
