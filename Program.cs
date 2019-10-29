@@ -26,7 +26,7 @@ namespace _2doParcialEscanioDisla
         {
             Maximize();
             AppDomain.CurrentDomain.SetData("DataDirectory", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
-            Console.BackgroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
 
@@ -74,12 +74,12 @@ namespace _2doParcialEscanioDisla
         {
             ConsoleColor cc = ConsoleColor.White;
             ConsoleColor sel = ConsoleColor.Cyan;
-            System.Console.BackgroundColor = ConsoleColor.Black;
+            System.Console.BackgroundColor = ConsoleColor.DarkGray;
             System.Console.SetCursorPosition(5, 3);
-            System.Console.WriteLine("MENU PRINCIPAL");
+            System.Console.WriteLine("MENÚ PRINCIPAL");
             System.Console.SetCursorPosition(5, 5);
             System.Console.ForegroundColor = k == 0 ? sel : cc;
-            System.Console.WriteLine("1. Categorias");
+            System.Console.WriteLine("1. Categorías");
             System.Console.SetCursorPosition(5, 7);
             System.Console.ForegroundColor = k == 1 ? sel : cc;
             System.Console.WriteLine("2. Productos");
@@ -105,7 +105,7 @@ namespace _2doParcialEscanioDisla
             ConsoleColor sel = ConsoleColor.Red;
             System.Console.BackgroundColor = ConsoleColor.Black;
             System.Console.SetCursorPosition(5, 3);
-            System.Console.WriteLine("============ Mantenimiento de la entidad Categoria ============");
+            System.Console.WriteLine("============ Mantenimiento de la entidad Categorías ============");
             System.Console.SetCursorPosition(5, 5);
             System.Console.ForegroundColor = k == 0 ? sel : cc;
             System.Console.WriteLine("1. Insertar registro");
@@ -128,7 +128,7 @@ namespace _2doParcialEscanioDisla
             ConsoleColor sel = ConsoleColor.Yellow;
             System.Console.BackgroundColor = ConsoleColor.Black;
             System.Console.SetCursorPosition(5, 3);
-            System.Console.WriteLine("============ Mantenimiento de la entidad Producto ============");
+            System.Console.WriteLine("============ Mantenimiento de la entidad Productos ============");
             System.Console.SetCursorPosition(5, 5);
             System.Console.ForegroundColor = k == 0 ? sel : cc;
             System.Console.WriteLine("1. Insertar registro");
