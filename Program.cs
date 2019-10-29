@@ -32,7 +32,6 @@ namespace _2doParcialEscanioDisla
 
             MenuPrincipal();
         }
-
         static void MenuPrincipal()
         {
             bool execute = false;
@@ -41,7 +40,6 @@ namespace _2doParcialEscanioDisla
             {
                 DrawMenuPrincipal(k);
                 ConsoleKeyInfo cki = Console.ReadKey(true);
-
 
                 switch (cki.Key)
                 {
@@ -66,7 +64,6 @@ namespace _2doParcialEscanioDisla
                 }
             }
         }
-
         static void DrawMenuPrincipal(int k)
         {
             ConsoleColor cc = ConsoleColor.Black;
@@ -76,61 +73,61 @@ namespace _2doParcialEscanioDisla
             Console.WriteLine("============ MENÚ PRINCIPAL ============");
             Console.SetCursorPosition(5, 5);
             Console.ForegroundColor = k == 0 ? sel : cc;
-            Console.WriteLine("1. Mantenimiento de entidades");
+            Console.WriteLine("- Mantenimiento de entidades");
             Console.SetCursorPosition(5, 7);
             Console.ForegroundColor = k == 1 ? sel : cc;
-            Console.WriteLine("2. Exportar una Factura en un archivo TXT");
+            Console.WriteLine("- Exportar una Factura en un archivo TXT");
             Console.SetCursorPosition(5, 9);
             Console.ForegroundColor = k == 2 ? sel : cc;
-            Console.WriteLine("3. Cargar archivo CSV de Clientes");
+            Console.WriteLine("- Cargar archivo CSV de Clientes");
             Console.SetCursorPosition(5, 11);
             Console.ForegroundColor = k == 3 ? sel : cc;
-            Console.WriteLine("4. Salir");
+            Console.WriteLine("- Salir");
             Console.SetCursorPosition(5, 13);
             Console.ForegroundColor = k == 4 ? sel : cc;
         }
         static void DrawMenuEntidades(int k)
         {
-            ConsoleColor cc = ConsoleColor.Black;
-            ConsoleColor sel = ConsoleColor.DarkBlue;
+            ConsoleColor cc = ConsoleColor.DarkRed;
+            ConsoleColor sel = ConsoleColor.DarkGreen;
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(5, 3);
             Console.WriteLine("============ MANTENIMIENTO DE ENTIDADES ============");
             Console.SetCursorPosition(5, 5);
             Console.ForegroundColor = k == 0 ? sel : cc;
-            Console.WriteLine("1. Categorías");
+            Console.WriteLine("- Categorías");
             Console.SetCursorPosition(5, 7);
             Console.ForegroundColor = k == 1 ? sel : cc;
-            Console.WriteLine("2. Territorios");
+            Console.WriteLine("- Territorios");
             Console.SetCursorPosition(5, 9);
             Console.ForegroundColor = k == 2 ? sel : cc;
-            Console.WriteLine("3. Productos");
+            Console.WriteLine("- Productos");
             Console.SetCursorPosition(5, 11);
             Console.ForegroundColor = k == 3 ? sel : cc;
-            Console.WriteLine("4. Salir");
+            Console.WriteLine("- Salir");
         }
         static void DrawMenuCategory(int k)
         {
-            ConsoleColor cc = ConsoleColor.Black;
-            ConsoleColor sel = ConsoleColor.DarkBlue;
+            ConsoleColor cc = ConsoleColor.DarkMagenta;
+            ConsoleColor sel = ConsoleColor.DarkRed;
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(5, 3);
             Console.WriteLine("******************* Mantenimiento de la entidad Categorías *******************");
             Console.SetCursorPosition(5, 5);
             Console.ForegroundColor = k == 0 ? sel : cc;
-            Console.WriteLine("1. Insertar registro");
+            Console.WriteLine("- Insertar registro");
             Console.SetCursorPosition(5, 7);
             Console.ForegroundColor = k == 1 ? sel : cc;
-            Console.WriteLine("2. Actualizar registro");
+            Console.WriteLine("- Actualizar registro");
             Console.SetCursorPosition(5, 9);
             Console.ForegroundColor = k == 2 ? sel : cc;
-            Console.WriteLine("3. Eliminar registro");
+            Console.WriteLine("- Eliminar registro");
             Console.SetCursorPosition(5, 11);
             Console.ForegroundColor = k == 3 ? sel : cc;
-            Console.WriteLine("4. Mostrar todos los registros");
+            Console.WriteLine("- Mostrar todos los registros");
             Console.SetCursorPosition(5, 13);
             Console.ForegroundColor = k == 4 ? sel : cc;
-            Console.WriteLine("5. Salir");
+            Console.WriteLine("- Salir");
         }
         static void DrawMenuProduct(int k)
         {
@@ -141,42 +138,42 @@ namespace _2doParcialEscanioDisla
             Console.WriteLine("******************* Mantenimiento de la entidad Productos *******************");
             Console.SetCursorPosition(5, 5);
             Console.ForegroundColor = k == 0 ? sel : cc;
-            Console.WriteLine("1. Insertar registro");
+            Console.WriteLine("- Insertar registro");
             Console.SetCursorPosition(5, 7);
             Console.ForegroundColor = k == 1 ? sel : cc;
-            Console.WriteLine("2. Actualizar registro");
+            Console.WriteLine("- Actualizar registro");
             Console.SetCursorPosition(5, 9);
             Console.ForegroundColor = k == 2 ? sel : cc;
-            Console.WriteLine("3. Eliminar registro");
+            Console.WriteLine("- Eliminar registro");
             Console.SetCursorPosition(5, 11);
             Console.ForegroundColor = k == 3 ? sel : cc;
-            Console.WriteLine("4. Mostrar todos los registros");
+            Console.WriteLine("- Mostrar todos los registros");
             Console.SetCursorPosition(5, 13);
             Console.ForegroundColor = k == 4 ? sel : cc;
-            Console.WriteLine("5. Salir");
+            Console.WriteLine("- Salir");
         }
         static void DrawMenuTerritory(int k)
         {
-            ConsoleColor cc = ConsoleColor.Black;
-            ConsoleColor sel = ConsoleColor.DarkBlue;
+            ConsoleColor cc = ConsoleColor.DarkRed;
+            ConsoleColor sel = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(5, 3);
             Console.WriteLine("******************* Mantenimiento de la entidad Territorios *******************");
             Console.SetCursorPosition(5, 5);
             Console.ForegroundColor = k == 0 ? sel : cc;
-            Console.WriteLine("1. Insertar registro");
+            Console.WriteLine("- Insertar registro");
             Console.SetCursorPosition(5, 7);
             Console.ForegroundColor = k == 1 ? sel : cc;
-            Console.WriteLine("2. Actualizar registro");
+            Console.WriteLine("- Actualizar registro");
             Console.SetCursorPosition(5, 9);
             Console.ForegroundColor = k == 2 ? sel : cc;
-            Console.WriteLine("3. Eliminar registro");
+            Console.WriteLine("- Eliminar registro");
             Console.SetCursorPosition(5, 11);
             Console.ForegroundColor = k == 3 ? sel : cc;
-            Console.WriteLine("4. Mostrar todos los registros");
+            Console.WriteLine("- Mostrar todos los registros");
             Console.SetCursorPosition(5, 13);
             Console.ForegroundColor = k == 4 ? sel : cc;
-            Console.WriteLine("5. Salir");
+            Console.WriteLine("- Salir");
         }
         static void MenuEntidades()
         {
@@ -212,10 +209,8 @@ namespace _2doParcialEscanioDisla
                             MenuProduct();
                             break;
 
-                        case 4:return;
+                        case 3: return;
                     }
-                    Console.WriteLine("Presione Enter para continuar...");
-                    Console.ReadLine();
                     Console.Clear();
                 }
             }
@@ -313,7 +308,8 @@ namespace _2doParcialEscanioDisla
                             break;
                         case 4: return;
                     }
-                    Console.WriteLine("Presione Enter para continuar...");
+                    Console.Write("\n");
+                    Console.WriteLine("\n Presione Enter para continuar...");
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -520,7 +516,6 @@ namespace _2doParcialEscanioDisla
                             }
                             break;
 
-
                         case 2:
                             Console.Clear();
                             Console.Write("\n Ingrese el código del producto que desea eliminar: ");
@@ -558,7 +553,8 @@ namespace _2doParcialEscanioDisla
 
                         case 4: return;
                     }
-                    Console.WriteLine("Presione Enter para continuar...");
+                    Console.Write("\n");
+                    Console.WriteLine("\n Presione Enter para continuar...");
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -694,7 +690,8 @@ namespace _2doParcialEscanioDisla
 
                         case 4: return;
                     }
-                    Console.WriteLine("Presione Enter para continuar...");
+                    Console.Write("\n");
+                    Console.WriteLine("\n Presione Enter para continuar...");
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -777,7 +774,8 @@ namespace _2doParcialEscanioDisla
                 }
             }
 
-            Console.WriteLine("Presione Enter para continuar...");
+            Console.Write("\n");
+            Console.WriteLine("\n Presione Enter para continuar...");
             Console.ReadLine();
             Console.Clear();
         }
@@ -846,8 +844,8 @@ namespace _2doParcialEscanioDisla
                 }
                 Console.ReadLine();
             }
-
-            Console.WriteLine("Presione Enter para continuar...");
+            Console.Write("\n");
+            Console.WriteLine("\n Presione Enter para continuar...");
             Console.ReadLine();
             Console.Clear();
         }
