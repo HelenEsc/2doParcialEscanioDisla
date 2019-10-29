@@ -15,7 +15,7 @@ namespace _2doParcialEscanioDisla
     class Program
     {
         [DllImport("user32.dll")]
-        public static extern bool ShowWindow(System.IntPtr hWnd, int cmdShow);
+        public static extern bool ShowWindow(IntPtr hWnd, int cmdShow);
 
         private static void Maximize()
         {
@@ -26,7 +26,7 @@ namespace _2doParcialEscanioDisla
         {
             Maximize();
             AppDomain.CurrentDomain.SetData("DataDirectory", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
-            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
 
@@ -40,7 +40,7 @@ namespace _2doParcialEscanioDisla
             for (int k = 0; ;)
             {
                 DrawMenuPrincipal(k);
-                ConsoleKeyInfo cki = System.Console.ReadKey(true);
+                ConsoleKeyInfo cki = Console.ReadKey(true);
 
 
                 switch (cki.Key)
@@ -57,13 +57,10 @@ namespace _2doParcialEscanioDisla
                     execute = false;
                     switch (k)
                     {
-                        case 0: System.Console.Clear(); MenuCategory(); break;
-                        case 1: System.Console.Clear(); MenuProduct(); break;
-                        case 2: System.Console.Clear(); MenuTerritory(); break;
-                        case 3: System.Console.Clear(); Factura(); break;
-                        case 4: System.Console.Clear(); CustomerCSV(); break;
-                        case 5: System.Console.Clear(); FacturaTXT();  break;
-                        case 6: return;
+                        case 0: Console.Clear(); MenuEntidades(); break;
+                        case 1: Console.Clear(); FacturaTXT(); break;
+                        case 2: Console.Clear(); CustomerCSV(); break;
+                        case 3: return;
                     }
                     Console.Clear();
                 }
@@ -72,101 +69,156 @@ namespace _2doParcialEscanioDisla
 
         static void DrawMenuPrincipal(int k)
         {
-            ConsoleColor cc = ConsoleColor.White;
-            ConsoleColor sel = ConsoleColor.Cyan;
-            System.Console.BackgroundColor = ConsoleColor.DarkGray;
-            System.Console.SetCursorPosition(5, 3);
-            System.Console.WriteLine("MENÚ PRINCIPAL");
-            System.Console.SetCursorPosition(5, 5);
-            System.Console.ForegroundColor = k == 0 ? sel : cc;
-            System.Console.WriteLine("1. Categorías");
-            System.Console.SetCursorPosition(5, 7);
-            System.Console.ForegroundColor = k == 1 ? sel : cc;
-            System.Console.WriteLine("2. Productos");
-            System.Console.SetCursorPosition(5, 9);
-            System.Console.ForegroundColor = k == 2 ? sel : cc;
-            System.Console.WriteLine("3. Territorios");
-            System.Console.SetCursorPosition(5, 11);
-            System.Console.ForegroundColor = k == 3 ? sel : cc;
-            System.Console.WriteLine("4. Creación de Factura");
-            System.Console.SetCursorPosition(5, 13);
-            System.Console.ForegroundColor = k == 4 ? sel : cc;
-            System.Console.WriteLine("5. Cargar Archivo CSV de Clientes");
-            System.Console.SetCursorPosition(5, 15);
-            System.Console.ForegroundColor = k == 5 ? sel : cc;
-            System.Console.WriteLine("6. Exportar una Factura en un Archivo TXT");
-            System.Console.SetCursorPosition(5, 17);
-            System.Console.ForegroundColor = k == 6 ? sel : cc;
-            System.Console.WriteLine("7. Salir");
+            ConsoleColor cc = ConsoleColor.Black;
+            ConsoleColor sel = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.SetCursorPosition(5, 3);
+            Console.WriteLine("============ MENÚ PRINCIPAL ============");
+            Console.SetCursorPosition(5, 5);
+            Console.ForegroundColor = k == 0 ? sel : cc;
+            Console.WriteLine("1. Mantenimiento de entidades");
+            Console.SetCursorPosition(5, 7);
+            Console.ForegroundColor = k == 1 ? sel : cc;
+            Console.WriteLine("2. Exportar una Factura en un archivo TXT");
+            Console.SetCursorPosition(5, 9);
+            Console.ForegroundColor = k == 2 ? sel : cc;
+            Console.WriteLine("3. Cargar archivo CSV de Clientes");
+            Console.SetCursorPosition(5, 11);
+            Console.ForegroundColor = k == 3 ? sel : cc;
+            Console.WriteLine("4. Salir");
+            Console.SetCursorPosition(5, 13);
+            Console.ForegroundColor = k == 4 ? sel : cc;
+        }
+        static void DrawMenuEntidades(int k)
+        {
+            ConsoleColor cc = ConsoleColor.Black;
+            ConsoleColor sel = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.SetCursorPosition(5, 3);
+            Console.WriteLine("============ MANTENIMIENTO DE ENTIDADES ============");
+            Console.SetCursorPosition(5, 5);
+            Console.ForegroundColor = k == 0 ? sel : cc;
+            Console.WriteLine("1. Categorías");
+            Console.SetCursorPosition(5, 7);
+            Console.ForegroundColor = k == 1 ? sel : cc;
+            Console.WriteLine("2. Territorios");
+            Console.SetCursorPosition(5, 9);
+            Console.ForegroundColor = k == 2 ? sel : cc;
+            Console.WriteLine("3. Productos");
+            Console.SetCursorPosition(5, 11);
+            Console.ForegroundColor = k == 3 ? sel : cc;
+            Console.WriteLine("4. Salir");
         }
         static void DrawMenuCategory(int k)
         {
-            ConsoleColor cc = ConsoleColor.White;
-            ConsoleColor sel = ConsoleColor.Red;
-            System.Console.BackgroundColor = ConsoleColor.Black;
-            System.Console.SetCursorPosition(5, 3);
-            System.Console.WriteLine("============ Mantenimiento de la entidad Categorías ============");
-            System.Console.SetCursorPosition(5, 5);
-            System.Console.ForegroundColor = k == 0 ? sel : cc;
-            System.Console.WriteLine("1. Insertar registro");
-            System.Console.SetCursorPosition(5, 7);
-            System.Console.ForegroundColor = k == 1 ? sel : cc;
-            System.Console.WriteLine("2. Actualizar registro");
-            System.Console.SetCursorPosition(5, 9);
-            System.Console.ForegroundColor = k == 2 ? sel : cc;
-            System.Console.WriteLine("3. Eliminar registro");
-            System.Console.SetCursorPosition(5, 11);
-            System.Console.ForegroundColor = k == 3 ? sel : cc;
-            System.Console.WriteLine("4. Mostrar todos los registros");
-            System.Console.SetCursorPosition(5, 13);
-            System.Console.ForegroundColor = k == 4 ? sel : cc;
-            System.Console.WriteLine("5. Salir");
+            ConsoleColor cc = ConsoleColor.Black;
+            ConsoleColor sel = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.SetCursorPosition(5, 3);
+            Console.WriteLine("******************* Mantenimiento de la entidad Categorías *******************");
+            Console.SetCursorPosition(5, 5);
+            Console.ForegroundColor = k == 0 ? sel : cc;
+            Console.WriteLine("1. Insertar registro");
+            Console.SetCursorPosition(5, 7);
+            Console.ForegroundColor = k == 1 ? sel : cc;
+            Console.WriteLine("2. Actualizar registro");
+            Console.SetCursorPosition(5, 9);
+            Console.ForegroundColor = k == 2 ? sel : cc;
+            Console.WriteLine("3. Eliminar registro");
+            Console.SetCursorPosition(5, 11);
+            Console.ForegroundColor = k == 3 ? sel : cc;
+            Console.WriteLine("4. Mostrar todos los registros");
+            Console.SetCursorPosition(5, 13);
+            Console.ForegroundColor = k == 4 ? sel : cc;
+            Console.WriteLine("5. Salir");
         }
         static void DrawMenuProduct(int k)
         {
-            ConsoleColor cc = ConsoleColor.White;
+            ConsoleColor cc = ConsoleColor.Black;
             ConsoleColor sel = ConsoleColor.Yellow;
-            System.Console.BackgroundColor = ConsoleColor.Black;
-            System.Console.SetCursorPosition(5, 3);
-            System.Console.WriteLine("============ Mantenimiento de la entidad Productos ============");
-            System.Console.SetCursorPosition(5, 5);
-            System.Console.ForegroundColor = k == 0 ? sel : cc;
-            System.Console.WriteLine("1. Insertar registro");
-            System.Console.SetCursorPosition(5, 7);
-            System.Console.ForegroundColor = k == 1 ? sel : cc;
-            System.Console.WriteLine("2. Actualizar registro");
-            System.Console.SetCursorPosition(5, 9);
-            System.Console.ForegroundColor = k == 2 ? sel : cc;
-            System.Console.WriteLine("3. Eliminar registro");
-            System.Console.SetCursorPosition(5, 11);
-            System.Console.ForegroundColor = k == 3 ? sel : cc;
-            System.Console.WriteLine("4. Mostrar todos los registros");
-            System.Console.SetCursorPosition(5, 13);
-            System.Console.ForegroundColor = k == 4 ? sel : cc;
-            System.Console.WriteLine("5. Salir");
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.SetCursorPosition(5, 3);
+            Console.WriteLine("******************* Mantenimiento de la entidad Productos *******************");
+            Console.SetCursorPosition(5, 5);
+            Console.ForegroundColor = k == 0 ? sel : cc;
+            Console.WriteLine("1. Insertar registro");
+            Console.SetCursorPosition(5, 7);
+            Console.ForegroundColor = k == 1 ? sel : cc;
+            Console.WriteLine("2. Actualizar registro");
+            Console.SetCursorPosition(5, 9);
+            Console.ForegroundColor = k == 2 ? sel : cc;
+            Console.WriteLine("3. Eliminar registro");
+            Console.SetCursorPosition(5, 11);
+            Console.ForegroundColor = k == 3 ? sel : cc;
+            Console.WriteLine("4. Mostrar todos los registros");
+            Console.SetCursorPosition(5, 13);
+            Console.ForegroundColor = k == 4 ? sel : cc;
+            Console.WriteLine("5. Salir");
         }
         static void DrawMenuTerritory(int k)
         {
-            ConsoleColor cc = ConsoleColor.White;
-            ConsoleColor sel = ConsoleColor.Green;
-            System.Console.BackgroundColor = ConsoleColor.Black;
-            System.Console.SetCursorPosition(5, 3);
-            System.Console.WriteLine("============ Mantenimiento de la entidad Territorios ============");
-            System.Console.SetCursorPosition(5, 5);
-            System.Console.ForegroundColor = k == 0 ? sel : cc;
-            System.Console.WriteLine("1. Insertar registro");
-            System.Console.SetCursorPosition(5, 7);
-            System.Console.ForegroundColor = k == 1 ? sel : cc;
-            System.Console.WriteLine("2. Actualizar registro");
-            System.Console.SetCursorPosition(5, 9);
-            System.Console.ForegroundColor = k == 2 ? sel : cc;
-            System.Console.WriteLine("3. Eliminar registro");
-            System.Console.SetCursorPosition(5, 11);
-            System.Console.ForegroundColor = k == 3 ? sel : cc;
-            System.Console.WriteLine("4. Mostrar todos los registros");
-            System.Console.SetCursorPosition(5, 13);
-            System.Console.ForegroundColor = k == 4 ? sel : cc;
-            System.Console.WriteLine("5. Salir");
+            ConsoleColor cc = ConsoleColor.Black;
+            ConsoleColor sel = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.SetCursorPosition(5, 3);
+            Console.WriteLine("******************* Mantenimiento de la entidad Territorios *******************");
+            Console.SetCursorPosition(5, 5);
+            Console.ForegroundColor = k == 0 ? sel : cc;
+            Console.WriteLine("1. Insertar registro");
+            Console.SetCursorPosition(5, 7);
+            Console.ForegroundColor = k == 1 ? sel : cc;
+            Console.WriteLine("2. Actualizar registro");
+            Console.SetCursorPosition(5, 9);
+            Console.ForegroundColor = k == 2 ? sel : cc;
+            Console.WriteLine("3. Eliminar registro");
+            Console.SetCursorPosition(5, 11);
+            Console.ForegroundColor = k == 3 ? sel : cc;
+            Console.WriteLine("4. Mostrar todos los registros");
+            Console.SetCursorPosition(5, 13);
+            Console.ForegroundColor = k == 4 ? sel : cc;
+            Console.WriteLine("5. Salir");
+        }
+        static void MenuEntidades()
+        {
+            bool execute = false;
+            for(int k = 0; ;)
+            {
+                DrawMenuEntidades(k);
+                ConsoleKeyInfo cki = Console.ReadKey(true);
+
+                switch (cki.Key)
+                {
+                    case ConsoleKey.UpArrow: k--; break;
+                    case ConsoleKey.DownArrow: k++; break;
+                    case ConsoleKey.Enter: execute = true; break;
+                }
+
+                if (k < 0) k = 4; else if (k > 4) k = 0;
+
+                if(execute)
+                {
+                    execute = false;
+                    switch(k)
+                    {
+                        case 0: Console.Clear();
+                            MenuCategory();
+                            break;
+
+                        case 1: Console.Clear();
+                            MenuTerritory();
+                            break;
+
+                        case 2: Console.Clear();
+                            MenuProduct();
+                            break;
+
+                        case 4:return;
+                    }
+                    Console.WriteLine("Presione Enter para continuar...");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+            }
         }
         static void MenuCategory()
         {
@@ -178,7 +230,7 @@ namespace _2doParcialEscanioDisla
             for (int k = 0; ;)
             {
                 DrawMenuCategory(k);
-                ConsoleKeyInfo cki = System.Console.ReadKey(true);
+                ConsoleKeyInfo cki = Console.ReadKey(true);
 
                 switch (cki.Key)
                 {
@@ -194,7 +246,7 @@ namespace _2doParcialEscanioDisla
                     execute = false;
                     switch (k)
                     {
-                        case 0: System.Console.Clear();
+                        case 0: Console.Clear();
                             Console.Write("\n Ingrese el nombre de la categoría que desea agregar: ");
                             CT.CategoryName = Console.ReadLine();
                             while (!Regex.IsMatch(CT.CategoryName, @"[a-zA-Z]"))
@@ -207,7 +259,7 @@ namespace _2doParcialEscanioDisla
                             cd.Agregar<Categories>(CT);
                             break;
 
-                        case 1: System.Console.Clear();
+                        case 1: Console.Clear();
                             Console.Write("\n Ingrese el código de la categoría que desea actualizar: ");
                             while (!int.TryParse(Console.ReadLine(), out IDCat))
                             {
@@ -231,7 +283,7 @@ namespace _2doParcialEscanioDisla
                                 cd.Actualizar<Categories>(CT);
                             }
                             break;
-                        case 2: System.Console.Clear();
+                        case 2: Console.Clear();
                             Console.Write("\n Ingrese el código de la categoría que desea eliminar: ");
                             while (!int.TryParse(Console.ReadLine(), out IDCat))
                             {
@@ -251,7 +303,7 @@ namespace _2doParcialEscanioDisla
                                 cd.Eliminar<Categories>(CT);
                             }
                             break;
-                        case 3: System.Console.Clear();
+                        case 3: Console.Clear();
                             ConsoleTable TablaCAT = new ConsoleTable("Código", "Nombre");
                             foreach (Categories ListCAT in cd.Listado<Categories>())
                             {
@@ -261,7 +313,7 @@ namespace _2doParcialEscanioDisla
                             break;
                         case 4: return;
                     }
-                    Console.WriteLine("Presione Enter para continuar");
+                    Console.WriteLine("Presione Enter para continuar...");
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -275,15 +327,14 @@ namespace _2doParcialEscanioDisla
             Products PD = new Products();
             SupplierData sd = new SupplierData();
             Suppliers SP = new Suppliers();
-            int Sel, IDProd, IDCat, IDSup;
+            int SEL, IDProd, IDCat, IDSup;
 
             bool execute = false;
 
             for (int k = 0; ;)
             {
                 DrawMenuProduct(k);
-                ConsoleKeyInfo cki = System.Console.ReadKey(true);
-
+                ConsoleKeyInfo cki = Console.ReadKey(true);
 
                 switch (cki.Key)
                 {
@@ -300,7 +351,7 @@ namespace _2doParcialEscanioDisla
                     switch (k)
                     {
                         case 0:
-                            System.Console.Clear();
+                            Console.Clear();
                             Console.Write("\n Nombre del producto: ");
                             PD.ProductName = Console.ReadLine();
                             while (!Regex.IsMatch(PD.ProductName, @"[a-zA-Z]"))
@@ -378,7 +429,7 @@ namespace _2doParcialEscanioDisla
                             break;
 
                         case 1:
-                            System.Console.Clear();
+                            Console.Clear();
                             Console.Write("\n Ingrese el código del producto que desea actualizar: ");
                             while (!int.TryParse(Console.ReadLine(), out IDProd))
                             {
@@ -402,12 +453,12 @@ namespace _2doParcialEscanioDisla
                                 Console.Write("\n 3) Precio");
                                 Console.Write("\n Ingrese el dígito de la opción que desea modificar: ");
 
-                                while (!int.TryParse(Console.ReadLine(), out Sel))
+                                while (!int.TryParse(Console.ReadLine(), out SEL))
                                 {
                                     Console.Write("\n Sólo se permiten números. Intente nuevamente: ");
                                 }
 
-                                switch (Sel)
+                                switch (SEL)
                                 {
                                     case 1:
                                         Console.Write("\n Ingrese el nuevo nombre de este producto: ");
@@ -466,13 +517,12 @@ namespace _2doParcialEscanioDisla
                                         pd.Actualizar<Products>(PD);
                                         break;
                                 }
-
                             }
                             break;
 
 
                         case 2:
-                            System.Console.Clear();
+                            Console.Clear();
                             Console.Write("\n Ingrese el código del producto que desea eliminar: ");
                             while (!int.TryParse(Console.ReadLine(), out IDProd))
                             {
@@ -493,9 +543,8 @@ namespace _2doParcialEscanioDisla
                             }
                             break;
 
-
                         case 3:
-                            System.Console.Clear();
+                            Console.Clear();
                             Console.Write("\n");
                             ConsoleTable TablaMuestra = new ConsoleTable("Código", "Nombre", "Suplidor", "Categoría", "Cantidad", "Precio",
                      "Unidades en Stock", "Unidades pedidas");
@@ -507,10 +556,9 @@ namespace _2doParcialEscanioDisla
                             TablaMuestra.Write(Format.Minimal);
                             break;
 
-
                         case 4: return;
                     }
-                    Console.WriteLine("Presione Enter para continuar");
+                    Console.WriteLine("Presione Enter para continuar...");
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -531,8 +579,7 @@ namespace _2doParcialEscanioDisla
             for (int k = 0; ;)
             {
                 DrawMenuTerritory(k);
-                ConsoleKeyInfo cki = System.Console.ReadKey(true);
-
+                ConsoleKeyInfo cki = Console.ReadKey(true);
 
                 switch (cki.Key)
                 {
@@ -549,7 +596,7 @@ namespace _2doParcialEscanioDisla
                     switch (k)
                     {
                         case 0:
-                            System.Console.Clear();
+                            Console.Clear();
                             Console.Write("\n Código: ");
                             TR.TerritoryID = Console.ReadLine();
 
@@ -591,7 +638,7 @@ namespace _2doParcialEscanioDisla
                             break;
 
                         case 1:
-                            System.Console.Clear();
+                            Console.Clear();
                             Console.Write("\n Ingrese el código del territorio que desea actualizar: ");
                             IDTer = Console.ReadLine();
                             Console.WriteLine("\n Estamos procesando su búsqueda.................\n");
@@ -616,9 +663,8 @@ namespace _2doParcialEscanioDisla
                             }
                             break;
 
-
                         case 2:
-                            System.Console.Clear();
+                            Console.Clear();
                             Console.Write("\n Ingrese el código del territorio que desea eliminar: ");
                             IDTer = Console.ReadLine();
                             Console.WriteLine("\n Estamos procesando su búsqueda.................\n");
@@ -636,7 +682,6 @@ namespace _2doParcialEscanioDisla
                             }
                             break;
 
-
                         case 3:
                             Console.Write("\n");
                             ConsoleTable TablaTerritorios = new ConsoleTable("Código", "Nombre", "Región");
@@ -647,10 +692,9 @@ namespace _2doParcialEscanioDisla
                             TablaTerritorios.Write(Format.Alternative);
                             break;
 
-
                         case 4: return;
                     }
-                    Console.WriteLine("Presione Enter para continuar");
+                    Console.WriteLine("Presione Enter para continuar...");
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -717,7 +761,7 @@ namespace _2doParcialEscanioDisla
                     }
                     catch (Exception msj)
                     {
-                        Console.WriteLine("\n\n  Hubo un error al actualizar" + msj.Message.ToString());
+                        Console.WriteLine("\n\n  Ha ocurrido un error actualizando datos: " + msj.Message.ToString());
                     }
                 }
                 else
@@ -728,12 +772,12 @@ namespace _2doParcialEscanioDisla
                     }
                     catch (Exception msj)
                     {
-                        Console.WriteLine("\n\n  Hubo un error al insertar" + msj.Message.ToString());
+                        Console.WriteLine("\n\n  Ha ocurrido un error insertando datos: " + msj.Message.ToString());
                     }
                 }
             }
 
-            Console.WriteLine("Presione Enter para continuar");
+            Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
             Console.Clear();
         }
@@ -803,13 +847,9 @@ namespace _2doParcialEscanioDisla
                 Console.ReadLine();
             }
 
-            Console.WriteLine("Presione Enter para continuar");
+            Console.WriteLine("Presione Enter para continuar...");
             Console.ReadLine();
             Console.Clear();
-        }
-        static void Factura()
-        {
-
         }
     }
 }
