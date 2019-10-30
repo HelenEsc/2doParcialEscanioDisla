@@ -792,12 +792,13 @@ namespace _2doParcialEscanioDisla
             Console.Write("\n A continuación se presentan todas las facturas creadas. Favor de tomar el código de la deseada para exportar en un archivo txt. Presione Enter.");
             Console.ReadLine();
             Console.Write("\n");
-            ConsoleTable TablaDetallesPedidos = new ConsoleTable("Código del pedido", "Producto", "Precio", "Cantidad", "Descuento");
-            foreach (Order_Details ORDET in odetdat.Listado<Order_Details>())
+            ConsoleTable Factura = new ConsoleTable("Código del pedido", "Compañia", "Contacto");
+            foreach (Orders fact in od.Listado<Orders>())
             {
-                TablaDetallesPedidos.AddRow(ORDET.OrderID, ORDET.Products.ProductName, ORDET.UnitPrice, ORDET.Quantity, ORDET.Discount);
+                Factura.AddRow(fact.OrderID, fact.Customers.CompanyName, fact.Customers.ContactName);
             }
-            TablaDetallesPedidos.Write(Format.Alternative);
+            Factura.Write(Format.Alternative);
+
             Console.Write("\n Ingrese el código de la factura que desea exportar: ");
 
             while (!int.TryParse(Console.ReadLine(), out IDFact))
