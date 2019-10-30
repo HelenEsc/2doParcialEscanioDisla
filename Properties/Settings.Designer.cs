@@ -12,7 +12,7 @@ namespace _2doParcialEscanioDisla.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,7 +25,7 @@ namespace _2doParcialEscanioDisla.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\helen\\OneDrive\\Documentos\\9no Cuatrimestre\\Lenguaje de 4ta\\Factura.txt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nadia.disla\\Desktop\\2doParcial\\Factura.txt")]
         public string ArchivoTxt {
             get {
                 return ((string)(this["ArchivoTxt"]));
@@ -37,7 +37,7 @@ namespace _2doParcialEscanioDisla.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\helen\\OneDrive\\Documentos\\9no Cuatrimestre\\Lenguaje de 4ta\\Clientes.csv")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nadia.disla\\Desktop\\2doParcial\\Clientes.csv")]
         public string RutaCSV {
             get {
                 return ((string)(this["RutaCSV"]));

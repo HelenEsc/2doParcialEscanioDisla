@@ -752,8 +752,10 @@ namespace _2doParcialEscanioDisla
             {
                 if (db.Customers.Any(ct => ct.CustomerID == c.CustomerID))
                 {
+                    var resultCUST = cud.Listado<Customers>().Find(a => a.CustomerID == c.CustomerID);
                     try
                     {
+                        cud.Model.Entry(resultCUST).State = EntityState.Detached;
                         cud.Actualizar(c);
                     }
                     catch (Exception msj)

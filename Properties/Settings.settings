@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ArchivoTxt" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\helen\OneDrive\Documentos\9no Cuatrimestre\Lenguaje de 4ta\Factura.txt</Value>
+      <Value Profile="(Default)">C:\Users\nadia.disla\Desktop\2doParcial\Factura.txt</Value>
     </Setting>
     <Setting Name="RutaCSV" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\helen\OneDrive\Documentos\9no Cuatrimestre\Lenguaje de 4ta\Clientes.csv</Value>
+      <Value Profile="(Default)">C:\Users\nadia.disla\Desktop\2doParcial\Clientes.csv</Value>
     </Setting>
   </Settings>
 </SettingsFile>
