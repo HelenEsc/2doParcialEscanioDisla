@@ -22,6 +22,7 @@ namespace _2doParcialEscanioDisla
             Process p = Process.GetCurrentProcess();
             ShowWindow(p.MainWindowHandle, 3);
         }
+        
         static void Main(string[] args)
         {
             Maximize();
@@ -542,13 +543,13 @@ namespace _2doParcialEscanioDisla
                             Console.Clear();
                             Console.Write("\n");
                             ConsoleTable TablaMuestra = new ConsoleTable("Código", "Nombre", "Suplidor", "Categoría", "Cantidad", "Precio",
-                     "Unidades en Stock", "Unidades pedidas");
+                     "Uds. Stock", "Uds. pedidas");
                             foreach (Products PROD in pd.Listado<Products>())
                             {
                                 TablaMuestra.AddRow(PROD.ProductID, PROD.ProductName, PROD.Suppliers.CompanyName, PROD.Categories.CategoryName, PROD.QuantityPerUnit,
                                     PROD.UnitPrice, PROD.UnitsInStock, PROD.UnitsOnOrder);
                             }
-                            TablaMuestra.Write(Format.Minimal);
+                            TablaMuestra.Write(Format.Alternative);
                             break;
 
                         case 4: return;
