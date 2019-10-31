@@ -837,6 +837,7 @@ namespace _2doParcialEscanioDisla
                 {
                     StreamWriter sw = new StreamWriter(ruta);
                     sw.Write("\n Cliente: ".PadRight(10) + custNombre.Customers.CompanyName);
+                    sw.Write("\n" .PadRight(15) + "\n Fecha: ".PadRight(10) + DateTime.Today.ToShortDateString());
                     sw.WriteLine("\n");
                     sw.WriteLine(TablaFacturas);
                     sw.WriteLine("\n");
@@ -849,7 +850,8 @@ namespace _2doParcialEscanioDisla
                 }
                 finally
                 {
-                    Console.WriteLine("Orden de compra correcta. Vaya a la siguiente ruta de archivo para encontrar su recibo: ");
+                    Console.WriteLine("\n Orden de compra correcta. Vaya a la siguiente ruta de archivo para encontrar su recibo: ");
+                    Console.Write("\n");
                     Console.WriteLine(ruta);
                 }
                 Console.ReadLine();

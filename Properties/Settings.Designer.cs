@@ -25,7 +25,7 @@ namespace _2doParcialEscanioDisla.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nadia.disla\\Desktop\\2doParcial\\Factura.txt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Nadia\\Documents\\2doParcialEscanioDisla\\Archivos\\Factura.txt")]
         public string ArchivoTxt {
             get {
                 return ((string)(this["ArchivoTxt"]));
@@ -37,7 +37,7 @@ namespace _2doParcialEscanioDisla.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\nadia.disla\\Desktop\\2doParcial\\Clientes.csv")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Nadia\\Documents\\2doParcialEscanioDisla\\Archivos\\Clientes.csv")]
         public string RutaCSV {
             get {
                 return ((string)(this["RutaCSV"]));
